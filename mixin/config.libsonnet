@@ -25,33 +25,33 @@
     // sum by (cluster, namespace, region, zone, job) (rate(thanos_compact_group_compactions_total{cluster=\"$cluster\", namespace=\"$namespace\", region=\"$region\", zone=\"$zone\", job=\"$job\"}[$interval]))
   },
   query+:: {
-    selector: 'job=~".*thanos-query.*"',
+    selector: 'job=~".*query.*"',
     title: '%(prefix)sQuery' % $.dashboard.prefix,
   },
   store+:: {
-    selector: 'job=~".*thanos-store.*"',
+    selector: 'job=~".*store.*"',
     title: '%(prefix)sStore' % $.dashboard.prefix,
   },
   receive+:: {
-    selector: 'job=~".*thanos-receive.*"',
+    selector: 'job=~".*receive.*"',
     title: '%(prefix)sReceive' % $.dashboard.prefix,
   },
   rule+:: {
-    selector: 'job=~".*thanos-rule.*"',
+    selector: 'job=~".*rule.*"',
     title: '%(prefix)sRule' % $.dashboard.prefix,
   },
   compact+:: {
-    selector: 'job=~".*thanos-compact.*"',
+    selector: 'job=~".*compact.*"',
     title: '%(prefix)sCompact' % $.dashboard.prefix,
   },
   sidecar+:: {
-    selector: 'job=~".*thanos-sidecar.*"',
+    selector: 'job=~".*sidecar.*"',
     thanosPrometheusCommonDimensions: 'namespace, pod',
     title: '%(prefix)sSidecar' % $.dashboard.prefix,
   },
   // TODO(kakkoyun): Fix naming convention: bucketReplicate
   bucket_replicate+:: {
-    selector: 'job=~".*thanos-bucket-replicate.*"',
+    selector: 'job=~".*bucket.*"',
     title: '%(prefix)sBucketReplicate' % $.dashboard.prefix,
   },
   dashboard+:: {
